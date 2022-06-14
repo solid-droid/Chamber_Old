@@ -1,17 +1,17 @@
 <div class="container">
-    <div class="button {{activeMenu.workspace ? 'active' : ''}}" title="Workspace" (click)="showMenu('workspace')">
+    <div class="button {{sharedData.activeLeftMenu.workspace ? 'active' : ''}}" title="Workspace" (click)="showMenu('workspace')">
         <i class="fa-solid fa-folder-closed"></i>
     </div>
-    <div class="button {{activeMenu.build ? 'active' : ''}}" title="Build" (click)="showMenu('build')">
+    <div class="button {{sharedData.activeLeftMenu.build ? 'active' : ''}}" title="Build" (click)="showMenu('build')">
         <i class="fa-solid fa-shapes"></i>
     </div>
-    <div class="button {{activeMenu.graph ? 'active' : ''}}" title="Graph" (click)="showMenu('graph')">
+    <div class="button {{sharedData.activeLeftMenu.graph ? 'active' : ''}}" title="Graph" (click)="showMenu('graph')">
         <i class="fa-solid fa-robot"></i>
     </div>
-    <div class="button {{activeMenu.connect ? 'active' : ''}}" title="Connect" (click)="showMenu('connect')">
+    <div class="button {{sharedData.activeLeftMenu.connect ? 'active' : ''}}" title="Connect" (click)="showMenu('connect')">
         <i class="fa-solid fa-down-left-and-up-right-to-center"></i>
     </div>
-    <div class="button {{activeMenu.extensions ? 'active' : ''}}" title="Extensions" (click)="showMenu('extensions')">
+    <div class="button {{sharedData.activeLeftMenu.extensions ? 'active' : ''}}" title="Extensions" (click)="showMenu('extensions')">
         <i class="fa-solid fa-puzzle-piece"></i>
     </div>
 </div>

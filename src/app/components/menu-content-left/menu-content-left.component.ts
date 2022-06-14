@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedDataService } from '../../services/sharedData/shared-data.service';
 
 @Component({
   selector: 'app-menu-content-left',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuContentLeftComponent implements OnInit {
 
-  constructor() { }
 
-  ngOnInit(): void {
+   constructor(
+    public readonly sharedData : SharedDataService
+  ) { }
+
+  ngOnInit() {
   }
 
 }

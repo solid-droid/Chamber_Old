@@ -6,9 +6,17 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class SharedDataService {
 
+  activeLeftMenu={
+    workspace:false,
+    build:true,
+    graph:false,
+    connect:false,
+    extensions:false,
+  };
+
   constructor() { }
 
-  private readonly obs_leftHeaderMenu_selected: BehaviorSubject<string> = new BehaviorSubject<string>('workspace');
+  private readonly obs_leftHeaderMenu_selected: BehaviorSubject<string> = new BehaviorSubject<string>('build');
   getLeftHeaderMenu_selection = this.obs_leftHeaderMenu_selected.asObservable();
 
   setLeftHeaderMenu_selection(value: string) {

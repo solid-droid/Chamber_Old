@@ -1,0 +1,52 @@
+.container{
+    height: calc(100vh - 79px);
+    overflow: hidden;
+    .section{
+        background-color: #383838;
+        color: rgb(232, 232, 232);
+        padding-bottom:10px;
+        border-bottom: solid 5px #242424;
+    }
+    .label{
+        font-size: 15px;
+        font-weight: bold;
+
+        padding:10px;
+    }
+    .partList{
+        display: flex;
+        .part{
+            width: 60px;
+            height: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: 0.2s;
+            i{
+                font-size: 30px;
+            }
+            .partName{
+                padding-top: 5px;
+                font-size: 12px;
+            }
+            &:hover{
+                background-color: #262626;
+                transform: scale(1.1);
+            }
+        }
+    }
+    .selectionDetails{
+        padding-left: 10px;
+        padding-right: 10px;
+        .col2Item{
+            display: grid;
+            grid-template-columns: 100px 1fr;
+        }
+        .col3Item{
+            display: grid;
+            grid-template-columns: 70px 70px 70px;
+        }
+    }
+}

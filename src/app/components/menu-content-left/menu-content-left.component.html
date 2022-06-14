@@ -1,1 +1,7 @@
-<div class="container"></div>
+<div class="container">
+    <app-menu-workspace *ngIf="sharedData.activeLeftMenu.workspace"></app-menu-workspace>
+    <app-menu-build *ngIf="sharedData.activeLeftMenu.build"></app-menu-build>
+    <app-menu-graph *ngIf="sharedData.activeLeftMenu.graph"></app-menu-graph>
+    <app-menu-connect *ngIf="sharedData.activeLeftMenu.connect"></app-menu-connect>
+    <app-menu-extensions *ngIf="sharedData.activeLeftMenu.extensions"></app-menu-extensions>
+</div>

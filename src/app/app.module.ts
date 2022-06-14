@@ -20,6 +20,13 @@ import { HeaderMenuCenterComponent } from './components/header-menu-center/heade
 
 //primeNg
 import {InputTextModule} from 'primeng/inputtext';
+import { MenuWorkspaceComponent } from './screens/menu-workspace/menu-workspace.component';
+import { MenuBuildComponent } from './screens/menu-build/menu-build.component';
+import { MenuGraphComponent } from './screens/menu-graph/menu-graph.component';
+import { MenuConnectComponent } from './screens/menu-connect/menu-connect.component';
+import { MenuExtensionsComponent } from './screens/menu-extensions/menu-extensions.component';
+import { MenuStatsComponent } from './screens/menu-stats/menu-stats.component';
+import { ViewDashboardComponent } from './screens/view-dashboard/view-dashboard.component';
 
 
 // AoT requires an exported function for factories
@@ -35,7 +42,14 @@ const httpLoaderFactory = (http: HttpClient): TranslateHttpLoader =>  new Transl
     MenuContentRightComponent,
     //screens
     HomeComponent,
-    HeaderMenuCenterComponent
+    HeaderMenuCenterComponent,
+    MenuWorkspaceComponent,
+    MenuBuildComponent,
+    MenuGraphComponent,
+    MenuConnectComponent,
+    MenuExtensionsComponent,
+    MenuStatsComponent,
+    ViewDashboardComponent
   ],
   imports: [
     //primeNg
