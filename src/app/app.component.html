@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="header">
+        <div class="title">
+        <div class="titleText">CHAMBER</div>    
+        </div>
+        <div class="buttons">
+            <div class="button" (click)="minimiseApp()">
+                <i class="fa-solid fa-minus"></i>
+            </div>
+            <div class="button" (click)="maximiseApp()">
+                <i class="fa-solid fa-window-maximize"></i>
+            </div>
+            <div class="button" (click)="closeApp()">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+        </div>
+    </div>
+    <div class="headerMenu">
+        <div class="headerMenuLeft">
+            <app-header-menu-left></app-header-menu-left>
+        </div>
+        <div class="headerMenuCenter">
+            <div class="triangle-down-left"></div>
+            <app-header-menu-center></app-header-menu-center>
+            <div class="triangle-down-right"></div>
+        </div>
+        <div class="headerMenuRight">
+            <app-header-menu-right></app-header-menu-right>
+        </div>
+    </div>
+    <div class="body">
+        <div class="content">
+            <div class="leftMenu" *ngIf="showLeftMenu">
+                <app-menu-content-left></app-menu-content-left>
+            </div>
+            <div class="routerContent">
+                <router-outlet></router-outlet>
+            </div>
+            <div class="rightMenu" *ngIf="showRightMenu">
+                <app-menu-content-right></app-menu-content-right>
+            </div>
+        </div>
+    </div>
+</div>
+
+

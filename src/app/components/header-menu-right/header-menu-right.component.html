@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="button" title="Focus">
+        <i class="fa-solid fa-arrows-to-eye"></i>
+    </div>
+    <div class="button" title="Sync">
+        <i class="fa-solid fa-arrows-rotate"></i>
+    </div>
+    <div class="button" title="Play">
+        <i class="fa-solid fa-play"></i>
+    </div>
+    <div class="button" title="Pause">
+        <i class="fa-solid fa-pause"></i>
+    </div>
+    <div class="button {{activeMenu.stats ? 'active' : ''}}" title="Stats" (click)="showMenu('stats')">
+        <i class="fa-solid fa-gears"></i>
+    </div>
+</div>

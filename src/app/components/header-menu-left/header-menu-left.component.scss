@@ -1,0 +1,22 @@
+.container{
+    display: flex;
+    font-size: 18px;
+    align-items: center;
+    .button{
+        width: 40px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color:#d2d2d2;
+        transition: 0.2s;
+        &:hover{
+            cursor: pointer;
+            background-color: #383838;
+        }
+    }
+
+    .active{
+        background-color: #383838;
+    }
+}

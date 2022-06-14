@@ -1,0 +1,6 @@
+<div class="container">
+    <span class="p-input-icon-left">
+        <i searchMode class="modeIcon {{searchMode ? 'pi pi-search' : 'pi pi-chevron-right'}}" (click)="modeChange()"></i>
+        <input type="text" pInputText placeholder="{{searchMode ? 'Search' : 'Command'}}" [(ngModel)]="searchText" />
+    </span>
+</div>

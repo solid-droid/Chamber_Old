@@ -1,0 +1,136 @@
+.header{
+    background-color: #2f2f2f;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 15px;
+    .title{
+        width: 100%;
+        margin-right: 10px;
+        padding-left: 10px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        color:#989898;
+        font-weight: bold;
+        -webkit-app-region: drag;
+
+        .titleText{
+            font-size: 25px;
+            transform: scaleY(0.6);
+        }
+    }
+    .buttons{
+        height: 100%;
+        align-items: center;
+        display: flex;
+        .button{
+            font-size: 15px;
+            padding: 3px;
+            font-weight: bold;
+            color:#989898;
+            width: 25px;
+            height: 80%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+            &:hover{
+                background-color: #444444;
+                cursor: pointer;
+            }
+        }
+    }
+}
+.headerMenu{
+    height: 45px;
+    display: flex;
+    width: 100%;
+    grid-gap: 10px;
+    .headerMenuLeft, .headerMenuRight, .headerMenuCenter{
+        display: flex;
+        align-items: center;
+    }
+    .headerMenuLeft{
+        min-width: 200px;
+        width: 20vw;
+        max-width: 20vw;
+        overflow: hidden;
+    }
+    .headerMenuCenter{
+        flex:1;
+        justify-content: center;
+        // background-color: #2f2f2f;
+        .triangle-down-left{
+            width: 0;
+            height: 0;
+            border-left: 60px solid transparent;
+            border-top: 46px solid #2f2f2f;
+            margin-left:-60px;
+            display: none;
+        }
+        .triangle-down-right{
+            width: 0;
+            height: 0;
+            border-right: 60px solid transparent;
+            border-top: 46px solid #2f2f2f;
+            margin-right:-60px;
+            display: none;
+        }
+    }
+    .headerMenuRight{
+        min-width: 200px;
+        width: 20vw;
+        max-width: 20vw;
+        overflow: hidden;
+        right:3px;
+        justify-content: right;
+    }
+}
+
+.body{
+    .content{
+        height: calc(100vh - 79px);
+        display: flex;
+        grid-gap:5px;
+        width:100vw;
+        .leftMenu{
+            position: absolute;
+            border-left: none;
+            min-width:20vw;
+            max-width: 60vw;
+            height: calc(100vh - 79px);
+            background: linear-gradient(180deg, #242424 0%, #373737 50%, #343434 100%);
+            overflow: auto;
+            resize: horizontal;
+            // display: none;
+        }
+        .rightMenu{
+            right:1px;
+            position: absolute;
+            border-right: none;
+            width:30vw;
+            height: calc(100vh - 79px);
+            background: linear-gradient(180deg, #242424 0%, #373737 50%, #343434 100%);
+            // display: none;
+        }
+        .routerContent{
+            flex: 1;
+        }
+    }
+
+}
+
+app-header-menu-center{
+    width:100%;
+}
+
+.container{
+    width: 100%;
+    height: calc(100% - 1px);
+    display: grid;
+    grid-template-rows: 30px 45px 1fr;
+    overflow: hidden;
+    border: solid rgb(93, 20, 20) 1px;
+}
