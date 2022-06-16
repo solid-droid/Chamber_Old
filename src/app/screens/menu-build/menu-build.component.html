@@ -1,6 +1,15 @@
 <div class="container">
     <div class="section">
         <div class="label">
+            CREATE / SELECT
+        </div>
+        <div class="dropdown">
+            <p-dropdown [options]="robotList" [(ngModel)]="selectedRobot" [editable]="true" optionLabel="name" (onChange)="updateRobotName()"></p-dropdown>
+            <div class="saveButton"><i class="fa-solid fa-floppy-disk"></i></div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="label">
             PARTS
         </div>
         <div class="partList">
@@ -40,7 +49,7 @@
                     ID
                 </div>
                 <div class="itemValue">
-                    <input type="text" placeholder="ID" />
+                    <input type="text" pInputText [(ngModel)]="id" disabled="true"> 
                 </div> 
             </div>
             <div class="col2Item">
@@ -48,7 +57,7 @@
                     PART
                 </div>
                 <div class="itemValue">
-                    <input type="text" placeholder="ID" />
+                    <input type="text" pInputText [(ngModel)]="partType" disabled="true"> 
                 </div> 
             </div>
             <div class="col3Item">
@@ -57,7 +66,7 @@
                         X
                     </div>
                     <div class="itemValue">
-                        <input type="text" placeholder="ID" />
+                        <input type="text" pInputText [(ngModel)]="x">
                     </div> 
                 </div>
                 <div class="item">
@@ -65,7 +74,7 @@
                         Y
                     </div>
                     <div class="itemValue">
-                        <input type="text" placeholder="ID" />
+                        <input type="text" pInputText [(ngModel)]="y">
                     </div> 
                 </div>
                 <div class="item">
@@ -73,7 +82,7 @@
                         Z
                     </div>
                     <div class="itemValue">
-                        <input type="text" placeholder="ID" />
+                        <input type="text" pInputText [(ngModel)]="z">
                     </div> 
                 </div>
             </div>
@@ -83,7 +92,7 @@
                         H
                     </div>
                     <div class="itemValue">
-                        <input type="text" placeholder="ID" />
+                        <input type="text" pInputText [(ngModel)]="h">
                     </div> 
                 </div>
                 <div class="item">
@@ -91,7 +100,7 @@
                         W
                     </div>
                     <div class="itemValue">
-                        <input type="text" placeholder="ID" />
+                        <input type="text" pInputText [(ngModel)]="w">
                     </div> 
                 </div>
                 <div class="item">
@@ -99,15 +108,36 @@
                         D
                     </div>
                     <div class="itemValue">
-                        <input type="text" placeholder="ID" />
+                        <input type="text" pInputText [(ngModel)]="d">
                     </div> 
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="section">
-        <div class="label">
-            Node Tree
+            <div class="col3Item">
+                <div class="item">
+                    <div class="itemName">
+                        Rot.X
+                    </div>
+                    <div class="itemValue">
+                        <input type="text" pInputText [(ngModel)]="rotx">
+                    </div> 
+                </div>
+                <div class="item">
+                    <div class="itemName">
+                        Rot.Y
+                    </div>
+                    <div class="itemValue">
+                        <input type="text" pInputText [(ngModel)]="roty">
+                    </div> 
+                </div>
+                <div class="item">
+                    <div class="itemName">
+                        Rot.Z
+                    </div>
+                    <div class="itemValue">
+                        <input type="text" pInputText [(ngModel)]="rotz">
+                    </div> 
+                </div>
+            </div>
         </div>
     </div>
 </div>

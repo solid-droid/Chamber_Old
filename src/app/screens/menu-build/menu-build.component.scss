@@ -45,8 +45,54 @@
             grid-template-columns: 100px 1fr;
         }
         .col3Item{
-            display: grid;
-            grid-template-columns: 70px 70px 70px;
+            display: flex;
+            grid-gap: 5px;
+            width: 100%;
+            input{
+                width:83px;
+            }
         }
+        input{
+            width:100%;
+            height:25px;
+            font-size: 15px;
+            border-radius: 3px;
+        }
+        .col2Item, .col3Item{
+            padding-bottom: 10px;
+        }
+        
+    }
+    .dropdown{
+        padding-left: 10px;
+        padding-right: 10px;
+        display: flex;
+        grid-gap:10px;
+        width: 100%;
+        .saveButton{
+            font-size: 28px;
+            display: flex;
+            height:30px;
+            width: 30px;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: 0.2s;
+            &:hover{
+                transform: scale(1.2);
+            }
+        }
+    }
+
+}
+
+::ng-deep{
+    p-dropdown{
+        flex: 1;
+    }
+    .p-dropdown{
+        height: 30px;
+        width: 100%;
+        border-radius: 3px;
     }
 }

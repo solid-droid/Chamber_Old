@@ -98,8 +98,9 @@
         .leftMenu{
             position: absolute;
             border-left: none;
-            min-width:20vw;
+            min-width: 280px;
             max-width: 60vw;
+            width: 83px;
             height: calc(100vh - 79px);
             background: linear-gradient(180deg, #242424 0%, #373737 50%, #343434 100%);
             overflow: auto;
