@@ -14,6 +14,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import {InputTextModule} from 'primeng/inputtext';
 import {DropdownModule} from 'primeng/dropdown';
 import {InputNumberModule} from 'primeng/inputnumber';
+import {SelectButtonModule} from 'primeng/selectbutton';
+import {ButtonModule} from 'primeng/button';
 
 //components
 import { AppComponent } from './app.component';
@@ -59,6 +61,8 @@ const httpLoaderFactory = (http: HttpClient): TranslateHttpLoader =>  new Transl
     InputTextModule,
     DropdownModule,
     InputNumberModule,
+    SelectButtonModule,
+    ButtonModule,
     //Angular
     BrowserModule,
     FormsModule,

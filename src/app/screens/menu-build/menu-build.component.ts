@@ -25,6 +25,15 @@ export class MenuBuildComponent implements OnInit {
   roty:any;
   rotz:any;
 
+  controlOptions: any = [
+    {name:'Position'},
+    {name:'Rotation'},
+    {name:'Scale'},
+  ];
+  selectedControl:any[]= [
+    {name:'Position'}
+  ];
+
   constructor() { }
 
   ngOnInit(): void {
