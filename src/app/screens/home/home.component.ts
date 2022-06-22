@@ -25,9 +25,21 @@ export class HomeComponent implements AfterViewInit {
     const cube = this.threeJS.loadCube({
       showEdge: true,
     });
-    this.threeJS.on(cube, 'mousemove', (e)=> { 
-      console.log(e);
-       });
+
+    const cube2 = this.threeJS.loadCube({
+      showEdge: true,
+    });
+
+    this.threeJS.on(cube, 'click', (e)=> { 
+      this.threeJS.targetControls.attach( cube );
+      this.threeJS.selectedObject = cube;
+    });
+
+    this.threeJS.on(cube2, 'click', (e)=> { 
+      this.threeJS.targetControls.attach( cube2 );
+      this.threeJS.selectedObject = cube2;
+    });
+
     this.threeJS.drawGrid();
     this.threeJS.render();
   }

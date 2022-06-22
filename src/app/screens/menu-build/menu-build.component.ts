@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ThreejsService } from '../../services/threejs/threejs.service';
 
 @Component({
   selector: 'app-menu-build',
   templateUrl: './menu-build.component.html',
   styleUrls: ['./menu-build.component.scss']
 })
-export class MenuBuildComponent implements OnInit {
+export class MenuBuildComponent implements OnInit, OnDestroy {
 
   robotList: any[] = [
     {name:'test'},
@@ -15,32 +16,34 @@ export class MenuBuildComponent implements OnInit {
   id:any;
   partType:any;
 
-  x:any;
-  y:any;
-  z:any;
-  h:any;
-  w:any;
-  d:any;
-  rotx:any;
-  roty:any;
-  rotz:any;
 
   controlOptions: any = [
-    {name:'Position'},
-    {name:'Rotation'},
-    {name:'Scale'},
+    {name:'Position' , value:'translate'},
+    {name:'Rotation' , value:'rotate'},
+    {name:'Scale', value:'scale'},
   ];
-  selectedControl:any[]= [
-    {name:'Position'}
-  ];
+  selectedControl:any= {name:'Position', value:'translate'};
 
-  constructor() { }
 
-  ngOnInit(): void {
+  constructor(
+    public readonly threeJS: ThreejsService
+  ) { }
+  ngOnDestroy() {
+    this.threeJS.targetControls.detach();
+  }
+
+  ngOnInit() {
   }
 
   updateRobotName(){
-    console.log(this.selectedRobot);
-  }
 
+  }
+  render(event, type, field){
+    this.threeJS.selectedObject[type][field] = event.value;
+    this.threeJS.render();
+  }
+  updateControl(){
+      this.threeJS.targetControls.setMode(this.selectedControl.value);
+      console.log(this.threeJS.selectedObject)
+  }
 }

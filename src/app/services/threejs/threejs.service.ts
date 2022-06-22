@@ -18,6 +18,7 @@ export class ThreejsService {
   canvasHeight:number;
   domEvents:any;
   renderRequested:boolean = false;
+  selectedObject:any;
 
   constructor() { }
 
@@ -51,7 +52,7 @@ export class ThreejsService {
 
     } );
 
-
+    this.scene.add( this.targetControls );
 
     window.addEventListener('resize', ()=>this.windowResize(this), false);
   }
@@ -63,7 +64,7 @@ export class ThreejsService {
     const gridHelper = new THREE.GridHelper( size, divisions );
     this.scene.add( gridHelper );
   }
-  requestRenderIfNotRequested(_this) {
+  requestRenderIfNotRequested(_this = this) {
     if (!_this.renderRequested) {
       _this.renderRequested = true;
       requestAnimationFrame(()=>_this.render());
@@ -87,8 +88,6 @@ export class ThreejsService {
     const material = new THREE.MeshBasicMaterial( { color:  '#b32d00' } );
     const cube = new THREE.Mesh( geometry, material );
     this.scene.add( cube );
-    this.targetControls.attach( cube );
-    this.scene.add( this.targetControls );
     cube.position.y = 0.5;
     if(showEdge) {
       const edge = this.createEdge(geometry, edgeColor);

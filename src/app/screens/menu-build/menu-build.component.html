@@ -20,15 +20,9 @@
                 </div>
             </div>
             <div class="part">
-                <i class="fa-solid fa-record-vinyl"></i>
-                <div class="partName">
-                    Wheel
-                </div>
-            </div>
-            <div class="part">
                 <i class="fa-solid fa-arrows-spin"></i>
                 <div class="partName">
-                    Motor
+                    Joint
                 </div>
             </div>
             <div class="part">
@@ -49,7 +43,7 @@
                     ID
                 </div>
                 <div class="itemValue">
-                    <input type="text" pInputText [(ngModel)]="id" disabled="true"> 
+                    {{threeJS.selectedObject?.id}}
                 </div> 
             </div>
             <div class="col2Item">
@@ -57,58 +51,59 @@
                     PART
                 </div>
                 <div class="itemValue">
-                    <input type="text" pInputText [(ngModel)]="partType" disabled="true"> 
+                    {{threeJS.selectedObject?.id}}
                 </div> 
             </div>
+            <div class="split"></div>
             <div class="col3Item">
                 <div class="item">
                     <div class="itemName">
-                        X
+                        Pos.X
                     </div>
                     <div class="itemValue">
-                        <p-inputNumber inputId="integeronly"  [(ngModel)]="x"></p-inputNumber>
+                        <p-inputNumber [maxFractionDigits]="2" [(ngModel)]="threeJS.selectedObject?.position.x" (onInput)="render($event,'position','x')"></p-inputNumber>
                     </div> 
                 </div>
                 <div class="item">
                     <div class="itemName">
-                        Y
+                        Pos.Y
                     </div>
                     <div class="itemValue">
-                        <p-inputNumber inputId="integeronly"  [(ngModel)]="y"></p-inputNumber>
+                        <p-inputNumber [maxFractionDigits]="2"  [(ngModel)]="threeJS.selectedObject?.position.y" (onInput)="render($event,'position','y')"></p-inputNumber>
                     </div> 
                 </div>
                 <div class="item">
                     <div class="itemName">
-                        Z
+                        Pos.Z
                     </div>
                     <div class="itemValue">
-                        <p-inputNumber inputId="integeronly"  [(ngModel)]="z"></p-inputNumber>
+                        <p-inputNumber [maxFractionDigits]="2"  [(ngModel)]="threeJS.selectedObject?.position.z" (onInput)="render($event,'position','z')"></p-inputNumber>
                     </div> 
                 </div>
             </div>
             <div class="col3Item">
                 <div class="item">
                     <div class="itemName">
-                        H
+                        Scale.X
                     </div>
                     <div class="itemValue">
-                        <p-inputNumber inputId="integeronly" [(ngModel)]="h"></p-inputNumber>
+                        <p-inputNumber [maxFractionDigits]="2" [(ngModel)]="threeJS.selectedObject?.scale.x" (onInput)="render($event,'scale','x')"></p-inputNumber>
                     </div> 
                 </div>
                 <div class="item">
                     <div class="itemName">
-                        W
+                        Scale.Y
                     </div>
                     <div class="itemValue">
-                        <p-inputNumber inputId="integeronly"  [(ngModel)]="w"></p-inputNumber>
+                        <p-inputNumber [maxFractionDigits]="2"  [(ngModel)]="threeJS.selectedObject?.scale.y" (onInput)="render($event,'scale','y')"></p-inputNumber>
                     </div> 
                 </div>
                 <div class="item">
                     <div class="itemName">
-                        D
+                        Scale.Z
                     </div>
                     <div class="itemValue">
-                        <p-inputNumber inputId="integeronly"  [(ngModel)]="d"></p-inputNumber>
+                        <p-inputNumber [maxFractionDigits]="2"  [(ngModel)]="threeJS.selectedObject?.scale.z" (onInput)="render($event,'scale','z')"></p-inputNumber>
                     </div> 
                 </div>
             </div>
@@ -118,7 +113,7 @@
                         Rot.X
                     </div>
                     <div class="itemValue">
-                        <p-inputNumber inputId="integeronly" [(ngModel)]="rotx"></p-inputNumber>
+                        <p-inputNumber [maxFractionDigits]="2"  [(ngModel)]="threeJS.selectedObject?.rotation._x" (onInput)="render($event,'rotation','x')"></p-inputNumber>
                     </div> 
                 </div>
                 <div class="item">
@@ -126,7 +121,7 @@
                         Rot.Y
                     </div>
                     <div class="itemValue">
-                        <p-inputNumber inputId="integeronly" [(ngModel)]="roty"></p-inputNumber>
+                        <p-inputNumber [maxFractionDigits]="2" [(ngModel)]="threeJS.selectedObject?.rotation._y" (onInput)="render($event,'rotation','y')"></p-inputNumber>
                     </div> 
                 </div>
                 <div class="item">
@@ -134,7 +129,7 @@
                         Rot.Z
                     </div>
                     <div class="itemValue">
-                        <p-inputNumber inputId="integeronly" [(ngModel)]="rotz"></p-inputNumber>
+                        <p-inputNumber [maxFractionDigits]="2" [(ngModel)]="threeJS.selectedObject?.rotation._z" (onInput)="render($event,'rotation','z')"></p-inputNumber>
                     </div> 
                 </div>
             </div>
@@ -145,7 +140,7 @@
             CONTROLS
         </div>
         <div class="controlList">
-            <p-selectButton [options]="controlOptions" [(ngModel)]="selectedControl" [multiple]="true" optionLabel="name"></p-selectButton>
+            <p-selectButton [options]="controlOptions" [(ngModel)]="selectedControl" optionLabel="name" (onChange)="updateControl()"></p-selectButton>
         </div>
     </div>
 </div>
